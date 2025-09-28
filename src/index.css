@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f0f0f0; /* Light background */
+  color: #333; /* Dark text for better readability */
+}
+
+/* Style for AppBar */
+.MuiAppBar-root {
+  background-color: #333 !important; /* Dark app bar */
+  color: white !important; /* White text on app bar */
+}
+
+/* Style for links in the app bar */
+.MuiToolbar-root .MuiButton-root {
+  color: white !important; /* White text for buttons in the app bar */
+}
+
+/* Style for the main content container */
+.MuiContainer-root {
+  background-color: #fff; /* White background for the main content */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for typography */
+.MuiTypography-root {
+  color: #333; /* Dark text for typography */
+}
+
+/* Style for buttons */
+.MuiButton-containedPrimary {
+  background-color: #333 !important; /* Dark button */
+  color: white !important; /* White text on button */
+}
