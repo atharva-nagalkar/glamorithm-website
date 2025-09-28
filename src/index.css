@@ -53,8 +53,8 @@ html {
   color: white !important; /* White text for buttons in the app bar */
 }
 
-/* Style for the main content container */
-.MuiContainer-root {
+/* Style for the main content container ONLY (not footer) */
+.content-container {
   background-color: #fff; /* White background for the main content */
   padding: 60px 40px; /* More generous padding */
   margin: 40px auto; /* Center with top/bottom margins */
@@ -64,7 +64,7 @@ html {
   transition: all 0.3s ease; /* Smooth transitions */
 }
 
-.MuiContainer-root:hover {
+.content-container:hover {
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
