@@ -8,7 +8,7 @@ function Footer() {
       sx={{
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         color: 'white',
-        py: 3,
+        py: 2,
         mt: 'auto',
         position: 'relative',
         overflow: 'hidden',
@@ -30,15 +30,15 @@ function Footer() {
           flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: 2
+          gap: 1
         }}>
           {/* Brand */}
           <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 0.5 }}>
               Glamorithm
             </Typography>
-            <Typography variant="body2" sx={{ opacity: 0.9, maxWidth: 300 }}>
-              AI-powered avatar shopping platform
+            <Typography variant="body2" sx={{ opacity: 0.9, maxWidth: 250, fontSize: '0.875rem' }}>
+              AI-powered avatar shopping
             </Typography>
           </Box>
           
@@ -95,25 +95,25 @@ function Footer() {
           </Box>
         </Box>
         
-        <Divider sx={{ my: 2, backgroundColor: 'rgba(255, 255, 255, 0.2)' }} />
+        <Divider sx={{ my: 1.5, backgroundColor: 'rgba(255, 255, 255, 0.2)' }} />
         
         <Box sx={{ 
           display: 'flex', 
           flexDirection: { xs: 'column', sm: 'row' },
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: 1
+          gap: 0.5
         }}>
-          <Typography variant="body2" sx={{ opacity: 0.8 }}>
+          <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.8rem' }}>
             © 2024 Glamorithm. All rights reserved.
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-            <Typography variant="body2" sx={{ opacity: 0.8 }}>
+            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.8rem' }}>
               Made with
             </Typography>
-            <Favorite sx={{ fontSize: 16, color: '#ff6b6b' }} />
-            <Typography variant="body2" sx={{ opacity: 0.8 }}>
-              for fashion lovers
+            <Favorite sx={{ fontSize: 14, color: '#ff6b6b' }} />
+            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.8rem' }}>
+              for fashion
             </Typography>
           </Box>
         </Box>

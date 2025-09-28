@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent, Avatar, Chip } from '@mui/material';
 import { AutoAwesome, Security, Speed, Palette } from '@mui/icons-material';
 
@@ -26,11 +27,42 @@ function About() {
   ];
 
   const team = [
-    { name: 'Sarah Chen', role: 'AI Research Lead', avatar: '👩‍💻' },
-    { name: 'Alex Kumar', role: 'Fashion Tech Director', avatar: '👨‍🎨' },
-    { name: 'Maya Patel', role: 'UX Design Head', avatar: '👩‍🎨' },
-    { name: 'David Kim', role: 'Engineering Manager', avatar: '👨‍💻' }
+    { name: 'Utkarsh Maurya', role: 'Manager and CFO', avatar: '👨‍💼' },
+    { name: 'Atharva Nagalkar', role: 'App Developer', avatar: '👨‍💻' },
+    { name: 'Saloni', role: 'Fashion Designer and Founder', avatar: '👩‍🎨' },
+    { name: 'Jagriti', role: 'Marketing and Branding', avatar: '👩‍💼' }
   ];
+
+  // Counter animation hook
+  const useCounter = (end: number, duration: number = 2000) => {
+    const [count, setCount] = useState(0);
+    
+    useEffect(() => {
+      let startTime: number;
+      let animationFrame: number;
+      
+      const animate = (currentTime: number) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        
+        setCount(Math.floor(progress * end));
+        
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(animate);
+        }
+      };
+      
+      animationFrame = requestAnimationFrame(animate);
+      
+      return () => cancelAnimationFrame(animationFrame);
+    }, [end, duration]);
+    
+    return count;
+  };
+
+  const avatarsCount = useCounter(10000, 2500);
+  const tryOnsCount = useCounter(50000, 3000);
+  const satisfactionCount = useCounter(95, 2000);
 
   return (
     <Container maxWidth="lg" className="animate-fadeInUp">
@@ -167,7 +199,7 @@ function About() {
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#333', mb: 1 }}>
-              10K+
+              {avatarsCount.toLocaleString()}+
             </Typography>
             <Typography variant="h6" sx={{ color: '#666' }}>
               Avatars Created
@@ -175,7 +207,7 @@ function About() {
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#333', mb: 1 }}>
-              50K+
+              {tryOnsCount.toLocaleString()}+
             </Typography>
             <Typography variant="h6" sx={{ color: '#666' }}>
               Virtual Try-Ons
@@ -183,7 +215,7 @@ function About() {
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#333', mb: 1 }}>
-              95%
+              {satisfactionCount}%
             </Typography>
             <Typography variant="h6" sx={{ color: '#666' }}>
               Customer Satisfaction
