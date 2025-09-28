@@ -9,7 +9,7 @@ function Footer() {
       sx={{
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         color: 'white',
-        py: 2,
+        py: 1.5,
         mt: 'auto',
         position: 'relative',
         overflow: 'hidden',
@@ -31,14 +31,14 @@ function Footer() {
           flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: 1
+          gap: 0.5
         }}>
           {/* Brand & Links */}
           <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 0.5 }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 0.25, fontSize: '1.1rem' }}>
               Glamorithm
             </Typography>
-            <Typography variant="body2" sx={{ opacity: 0.9, maxWidth: 250, fontSize: '0.875rem', mb: 1 }}>
+            <Typography variant="body2" sx={{ opacity: 0.9, maxWidth: 250, fontSize: '0.8rem', mb: 0.5 }}>
               AI-powered avatar shopping
             </Typography>
             <Box sx={{ display: 'flex', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
@@ -48,12 +48,18 @@ function Footer() {
                 sx={{ 
                   color: 'white', 
                   textDecoration: 'none', 
-                  fontSize: '0.875rem',
-                  opacity: 0.9,
-                  '&:hover': { opacity: 1, textDecoration: 'underline' }
+                  fontSize: '1rem',
+                  fontWeight: 'medium',
+                  opacity: 1,
+                  '&:hover': { 
+                    opacity: 0.8, 
+                    textDecoration: 'underline',
+                    transform: 'translateY(-1px)'
+                  },
+                  transition: 'all 0.3s ease'
                 }}
               >
-                About
+                About Us
               </Link>
               <Link 
                 component={RouterLink} 
@@ -61,12 +67,18 @@ function Footer() {
                 sx={{ 
                   color: 'white', 
                   textDecoration: 'none', 
-                  fontSize: '0.875rem',
-                  opacity: 0.9,
-                  '&:hover': { opacity: 1, textDecoration: 'underline' }
+                  fontSize: '1rem',
+                  fontWeight: 'medium',
+                  opacity: 1,
+                  '&:hover': { 
+                    opacity: 0.8, 
+                    textDecoration: 'underline',
+                    transform: 'translateY(-1px)'
+                  },
+                  transition: 'all 0.3s ease'
                 }}
               >
-                Contact
+                Contact Us
               </Link>
             </Box>
           </Box>
@@ -124,24 +136,24 @@ function Footer() {
           </Box>
         </Box>
         
-        <Divider sx={{ my: 1.5, backgroundColor: 'rgba(255, 255, 255, 0.2)' }} />
+        <Divider sx={{ my: 1, backgroundColor: 'rgba(255, 255, 255, 0.2)' }} />
         
         <Box sx={{ 
           display: 'flex', 
           flexDirection: { xs: 'column', sm: 'row' },
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: 0.5
+          gap: 0.25
         }}>
-          <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.8rem' }}>
+          <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.75rem' }}>
             © 2024 Glamorithm. All rights reserved.
           </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.8rem' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
+            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.75rem' }}>
               Made with
             </Typography>
-            <Favorite sx={{ fontSize: 14, color: '#ff6b6b' }} />
-            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.8rem' }}>
+            <Favorite sx={{ fontSize: 12, color: '#ff6b6b' }} />
+            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.75rem' }}>
               for fashion
             </Typography>
           </Box>
