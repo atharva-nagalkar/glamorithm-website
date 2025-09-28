@@ -1,87 +1,121 @@
-import { Box, Typography, Container, Grid, Link, IconButton } from '@mui/material';
-import { GitHub, Twitter, Instagram, Email } from '@mui/icons-material';
+import { Box, Typography, Container, IconButton, Divider } from '@mui/material';
+import { GitHub, Twitter, Instagram, Email, Favorite } from '@mui/icons-material';
 
 function Footer() {
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: '#333',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         color: 'white',
-        py: 4,
+        py: 3,
         mt: 'auto',
+        position: 'relative',
+        overflow: 'hidden',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(255, 255, 255, 0.05)',
+          backdropFilter: 'blur(10px)',
+        }
       }}
     >
-      <Container maxWidth="lg">
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+        <Box sx={{ 
+          display: 'flex', 
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: 2
+        }}>
+          {/* Brand */}
+          <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
               Glamorithm
             </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
-              Create stunning AI-powered avatars with our advanced customization tools.
-              Transform your photos into personalized digital representations.
+            <Typography variant="body2" sx={{ opacity: 0.9, maxWidth: 300 }}>
+              AI-powered avatar shopping platform
             </Typography>
-          </Grid>
+          </Box>
           
-          <Grid item xs={12} md={2}>
-            <Typography variant="h6" gutterBottom>
-              Features
-            </Typography>
-            <Link href="/avatar-creation" color="inherit" underline="hover" display="block" sx={{ mb: 1 }}>
-              Create Avatar
-            </Link>
-            <Link href="/customization" color="inherit" underline="hover" display="block" sx={{ mb: 1 }}>
-              Customize
-            </Link>
-            <Link href="/outfit-try-on" color="inherit" underline="hover" display="block" sx={{ mb: 1 }}>
-              Try Outfits
-            </Link>
-          </Grid>
-          
-          <Grid item xs={12} md={2}>
-            <Typography variant="h6" gutterBottom>
-              Company
-            </Typography>
-            <Link href="/about" color="inherit" underline="hover" display="block" sx={{ mb: 1 }}>
-              About Us
-            </Link>
-            <Link href="/pricing" color="inherit" underline="hover" display="block" sx={{ mb: 1 }}>
-              Pricing
-            </Link>
-            <Link href="/support" color="inherit" underline="hover" display="block" sx={{ mb: 1 }}>
-              Support
-            </Link>
-          </Grid>
-          
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Connect With Us
-            </Typography>
-            <Box sx={{ mb: 2 }}>
-              <IconButton color="inherit" aria-label="GitHub">
-                <GitHub />
-              </IconButton>
-              <IconButton color="inherit" aria-label="Twitter">
-                <Twitter />
-              </IconButton>
-              <IconButton color="inherit" aria-label="Instagram">
-                <Instagram />
-              </IconButton>
-              <IconButton color="inherit" aria-label="Email">
-                <Email />
-              </IconButton>
-            </Box>
-            <Typography variant="body2">
-              Stay updated with our latest features and avatar creation tips.
-            </Typography>
-          </Grid>
-        </Grid>
+          {/* Social Links */}
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <IconButton 
+              color="inherit" 
+              sx={{ 
+                '&:hover': { 
+                  transform: 'translateY(-2px)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                },
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <GitHub />
+            </IconButton>
+            <IconButton 
+              color="inherit"
+              sx={{ 
+                '&:hover': { 
+                  transform: 'translateY(-2px)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                },
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <Twitter />
+            </IconButton>
+            <IconButton 
+              color="inherit"
+              sx={{ 
+                '&:hover': { 
+                  transform: 'translateY(-2px)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                },
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <Instagram />
+            </IconButton>
+            <IconButton 
+              color="inherit"
+              sx={{ 
+                '&:hover': { 
+                  transform: 'translateY(-2px)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                },
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <Email />
+            </IconButton>
+          </Box>
+        </Box>
         
-        <Box sx={{ borderTop: '1px solid #555', mt: 4, pt: 2, textAlign: 'center' }}>
-          <Typography variant="body2">
-            © 2024 Glamorithm. All rights reserved. | Privacy Policy | Terms of Service
+        <Divider sx={{ my: 2, backgroundColor: 'rgba(255, 255, 255, 0.2)' }} />
+        
+        <Box sx={{ 
+          display: 'flex', 
+          flexDirection: { xs: 'column', sm: 'row' },
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: 1
+        }}>
+          <Typography variant="body2" sx={{ opacity: 0.8 }}>
+            © 2024 Glamorithm. All rights reserved.
           </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Typography variant="body2" sx={{ opacity: 0.8 }}>
+              Made with
+            </Typography>
+            <Favorite sx={{ fontSize: 16, color: '#ff6b6b' }} />
+            <Typography variant="body2" sx={{ opacity: 0.8 }}>
+              for fashion lovers
+            </Typography>
+          </Box>
         </Box>
       </Container>
     </Box>

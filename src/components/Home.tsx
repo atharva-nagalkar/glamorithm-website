@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <Box sx={{ py: 8 }}>
+    <Box sx={{ py: 8 }} className="animate-fadeInUp">
       {/* Hero Section */}
-      <Container maxWidth="md" sx={{ textAlign: 'center', mb: 8 }}>
+      <Container maxWidth="md" sx={{ textAlign: 'center', mb: 8 }} className="animate-slideInLeft">
         <Typography 
           variant="h2" 
           component="h1" 

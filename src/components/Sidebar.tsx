@@ -17,7 +17,10 @@ import {
   Checkroom,
   AttachMoney,
   Info,
-  Support
+  Support,
+  ContactMail,
+  Login,
+  PersonAdd
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
@@ -31,9 +34,15 @@ function Sidebar({ open, onClose }: SidebarProps) {
     { text: 'My Avatars', path: '/avatar-gallery', icon: <PhotoLibrary /> },
     { text: 'Customize Avatar', path: '/customization', icon: <Palette /> },
     { text: 'Virtual Try-On', path: '/outfit-try-on', icon: <Checkroom /> },
-    { text: 'My Orders', path: '/orders', icon: <AttachMoney /> },
+    { text: 'My Orders', path: '/pricing', icon: <AttachMoney /> },
     { text: 'About Us', path: '/about', icon: <Info /> },
+    { text: 'Contact', path: '/contact', icon: <ContactMail /> },
     { text: 'Help & Support', path: '/support', icon: <Support /> },
+  ];
+
+  const authItems = [
+    { text: 'Login', path: '/login', icon: <Login /> },
+    { text: 'Sign Up', path: '/signup', icon: <PersonAdd /> },
   ];
 
   return (
@@ -61,6 +70,39 @@ function Sidebar({ open, onClose }: SidebarProps) {
       
       <List>
         {menuItems.map((item) => (
+          <ListItem key={item.text} disablePadding>
+            <ListItemButton
+              component={Link}
+              to={item.path}
+              onClick={onClose}
+              sx={{
+                '&:hover': {
+                  backgroundColor: '#e0e0e0',
+                },
+              }}
+            >
+              <ListItemIcon sx={{ color: '#333' }}>
+                {item.icon}
+              </ListItemIcon>
+              <ListItemText 
+                primary={item.text}
+                sx={{ color: '#333' }}
+              />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      
+      <Divider />
+      
+      <Box sx={{ p: 2 }}>
+        <Typography variant="subtitle2" sx={{ color: '#666', mb: 1 }}>
+          Account
+        </Typography>
+      </Box>
+      
+      <List>
+        {authItems.map((item) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton
               component={Link}

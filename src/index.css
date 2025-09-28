@@ -1,8 +1,45 @@
 body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #f0f0f0; /* Light background */
-  color: #333; /* Dark text for better readability */
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Beautiful gradient background */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Beautiful animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out;
 }
 
 /* Style for AppBar */
@@ -19,12 +56,17 @@ body {
 /* Style for the main content container */
 .MuiContainer-root {
   background-color: #fff; /* White background for the main content */
-  padding: 40px 20px; /* Increased padding */
-  margin-top: 20px;
-  margin-bottom: 60px; /* Add bottom margin for spacing from footer */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  min-height: 60vh; /* Ensure minimum height for content area */
+  padding: 60px 40px; /* More generous padding */
+  margin: 40px auto; /* Center with top/bottom margins */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  min-height: 70vh; /* Larger minimum height */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.MuiContainer-root:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
 /* Style for typography */
