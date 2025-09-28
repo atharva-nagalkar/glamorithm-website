@@ -28,12 +28,12 @@ interface SidebarProps {
 
 function Sidebar({ open, onClose }: SidebarProps) {
   const menuItems = [
-    { text: 'Avatar Gallery', path: '/avatar-gallery', icon: <PhotoLibrary /> },
+    { text: 'My Avatars', path: '/avatar-gallery', icon: <PhotoLibrary /> },
     { text: 'Customize Avatar', path: '/customization', icon: <Palette /> },
-    { text: 'Outfit Try-On', path: '/outfit-try-on', icon: <Checkroom /> },
-    { text: 'Pricing', path: '/pricing', icon: <AttachMoney /> },
-    { text: 'About', path: '/about', icon: <Info /> },
-    { text: 'Support', path: '/support', icon: <Support /> },
+    { text: 'Virtual Try-On', path: '/outfit-try-on', icon: <Checkroom /> },
+    { text: 'My Orders', path: '/orders', icon: <AttachMoney /> },
+    { text: 'About Us', path: '/about', icon: <Info /> },
+    { text: 'Help & Support', path: '/support', icon: <Support /> },
   ];
 
   return (

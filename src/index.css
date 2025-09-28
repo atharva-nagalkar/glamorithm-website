@@ -19,10 +19,12 @@ body {
 /* Style for the main content container */
 .MuiContainer-root {
   background-color: #fff; /* White background for the main content */
-  padding: 20px;
+  padding: 40px 20px; /* Increased padding */
   margin-top: 20px;
+  margin-bottom: 60px; /* Add bottom margin for spacing from footer */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 60vh; /* Ensure minimum height for content area */
 }
 
 /* Style for typography */

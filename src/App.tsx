@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { Container, AppBar, Toolbar, Typography, Button, Box, IconButton } from '@mui/material';
-import { Menu as MenuIcon, AccountCircle } from '@mui/icons-material';
+import { Container, AppBar, Toolbar, Typography, Button, Box, IconButton, Badge } from '@mui/material';
+import { Menu as MenuIcon, AccountCircle, ShoppingCart } from '@mui/icons-material';
 import Home from './components/Home';
+import Shop from './components/Shop';
 import AvatarCreation from './components/AvatarCreation';
 import AvatarGallery from './components/AvatarGallery';
 import Customization from './components/Customization';
@@ -25,17 +26,52 @@ function App() {
       <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <AppBar position="static" className="app-bar">
           <Toolbar>
-            <Typography variant="h6" component={Link} to="/" sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit' }}>
-              Glamorithm
-            </Typography>
+            <Box component={Link} to="/" sx={{ flexGrow: 1, textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+              <img 
+                src="/logo.jpg" 
+                alt="Glamorithm" 
+                style={{ 
+                  height: '40px', 
+                  marginRight: '8px',
+                  // filter: 'brightness(0) invert(1)' // Uncomment to make logo white
+                }} 
+                onError={(e) => {
+                  // Fallback to text if logo doesn't exist
+                  e.currentTarget.style.display = 'none';
+                  const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (nextElement) {
+                    nextElement.style.display = 'block';
+                  }
+                }}
+              />
+              <Typography 
+                variant="h6" 
+                sx={{ 
+                  color: 'inherit',
+                  display: 'none' // Hidden by default, shows if logo fails to load
+                }}
+              >
+                Glamorithm
+              </Typography>
+            </Box>
             
             {/* Essential navigation items */}
             <Button color="inherit" component={Link} to="/" sx={{ mx: 1 }}>
               Home
             </Button>
+            <Button color="inherit" component={Link} to="/shop" sx={{ mx: 1 }}>
+              Shop
+            </Button>
             <Button color="inherit" component={Link} to="/avatar-creation" sx={{ mx: 1 }}>
               Create Avatar
             </Button>
+            
+            {/* Shopping cart */}
+            <IconButton color="inherit" sx={{ ml: 1 }}>
+              <Badge badgeContent={0} color="error">
+                <ShoppingCart />
+              </Badge>
+            </IconButton>
             
             {/* User account */}
             <IconButton color="inherit" sx={{ ml: 1 }}>
@@ -49,10 +85,11 @@ function App() {
           </Toolbar>
         </AppBar>
         
-        <Container className="content-container" sx={{ flex: 1 }}>
-          <Box sx={{ mt: 3, mb: 4 }}>
+        <Container className="content-container" sx={{ flex: 1, py: 4 }}>
+          <Box sx={{ mt: 2, mb: 6 }}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
               <Route path="/avatar-creation" element={<AvatarCreation />} />
               <Route path="/avatar-gallery" element={<AvatarGallery />} />
               <Route path="/customization" element={<Customization />} />
