@@ -9,7 +9,7 @@ function Footer() {
       sx={{
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         color: 'white',
-        py: 1.5,
+        py: 0.75,
         mt: 'auto',
         position: 'relative',
         overflow: 'hidden',
@@ -31,17 +31,14 @@ function Footer() {
           flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: 0.5
+          gap: 0.25
         }}>
           {/* Brand & Links */}
           <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 0.25, fontSize: '1.1rem' }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 0, fontSize: '1rem' }}>
               Glamorithm
             </Typography>
-            <Typography variant="body2" sx={{ opacity: 0.9, maxWidth: 250, fontSize: '0.8rem', mb: 0.5 }}>
-              AI-powered avatar shopping
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+            <Box sx={{ display: 'flex', gap: 1.5, justifyContent: { xs: 'center', md: 'flex-start' }, mt: 0.25 }}>
               <Link 
                 component={RouterLink} 
                 to="/about" 
@@ -136,24 +133,24 @@ function Footer() {
           </Box>
         </Box>
         
-        <Divider sx={{ my: 1, backgroundColor: 'rgba(255, 255, 255, 0.2)' }} />
+        <Divider sx={{ my: 0.5, backgroundColor: 'rgba(255, 255, 255, 0.2)' }} />
         
         <Box sx={{ 
           display: 'flex', 
           flexDirection: { xs: 'column', sm: 'row' },
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: 0.25
+          gap: 0.125
         }}>
-          <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.75rem' }}>
-            © 2024 Glamorithm. All rights reserved.
+          <Typography variant="body2" sx={{ opacity: 0.7, fontSize: '0.7rem' }}>
+            © 2024 Glamorithm
           </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
-            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.75rem' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.125 }}>
+            <Typography variant="body2" sx={{ opacity: 0.7, fontSize: '0.7rem' }}>
               Made with
             </Typography>
-            <Favorite sx={{ fontSize: 12, color: '#ff6b6b' }} />
-            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: '0.75rem' }}>
+            <Favorite sx={{ fontSize: 10, color: '#ff6b6b' }} />
+            <Typography variant="body2" sx={{ opacity: 0.7, fontSize: '0.7rem' }}>
               for fashion
             </Typography>
           </Box>
