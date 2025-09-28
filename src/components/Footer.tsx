@@ -1,4 +1,4 @@
-import { Box, Typography, Container, IconButton, Divider, Link } from '@mui/material';
+import { Box, Typography, Container, IconButton, Link } from '@mui/material';
 import { GitHub, Twitter, Instagram, Email, Favorite } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ function Footer() {
       sx={{
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         color: 'white',
-        py: 0.75,
+        py: 0.25,
         mt: 'auto',
         position: 'relative',
         overflow: 'hidden',
@@ -133,19 +133,18 @@ function Footer() {
           </Box>
         </Box>
         
-        <Divider sx={{ my: 0.5, backgroundColor: 'rgba(255, 255, 255, 0.2)' }} />
-        
+        {/* Single line footer */}
         <Box sx={{ 
           display: 'flex', 
-          flexDirection: { xs: 'column', sm: 'row' },
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           alignItems: 'center',
-          gap: 0.125
+          gap: 2,
+          mt: 0.25
         }}>
           <Typography variant="body2" sx={{ opacity: 0.7, fontSize: '0.7rem' }}>
             © 2024 Glamorithm
           </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.125 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
             <Typography variant="body2" sx={{ opacity: 0.7, fontSize: '0.7rem' }}>
               Made with
             </Typography>
