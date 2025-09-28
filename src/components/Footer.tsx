@@ -1,5 +1,6 @@
-import { Box, Typography, Container, IconButton, Divider } from '@mui/material';
+import { Box, Typography, Container, IconButton, Divider, Link } from '@mui/material';
 import { GitHub, Twitter, Instagram, Email, Favorite } from '@mui/icons-material';
+import { Link as RouterLink } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -32,14 +33,42 @@ function Footer() {
           alignItems: 'center',
           gap: 1
         }}>
-          {/* Brand */}
+          {/* Brand & Links */}
           <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
             <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 0.5 }}>
               Glamorithm
             </Typography>
-            <Typography variant="body2" sx={{ opacity: 0.9, maxWidth: 250, fontSize: '0.875rem' }}>
+            <Typography variant="body2" sx={{ opacity: 0.9, maxWidth: 250, fontSize: '0.875rem', mb: 1 }}>
               AI-powered avatar shopping
             </Typography>
+            <Box sx={{ display: 'flex', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+              <Link 
+                component={RouterLink} 
+                to="/about" 
+                sx={{ 
+                  color: 'white', 
+                  textDecoration: 'none', 
+                  fontSize: '0.875rem',
+                  opacity: 0.9,
+                  '&:hover': { opacity: 1, textDecoration: 'underline' }
+                }}
+              >
+                About
+              </Link>
+              <Link 
+                component={RouterLink} 
+                to="/contact" 
+                sx={{ 
+                  color: 'white', 
+                  textDecoration: 'none', 
+                  fontSize: '0.875rem',
+                  opacity: 0.9,
+                  '&:hover': { opacity: 1, textDecoration: 'underline' }
+                }}
+              >
+                Contact
+              </Link>
+            </Box>
           </Box>
           
           {/* Social Links */}

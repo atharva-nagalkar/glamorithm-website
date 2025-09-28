@@ -16,9 +16,7 @@ import {
   Palette,
   Checkroom,
   AttachMoney,
-  Info,
   Support,
-  ContactMail,
   Login,
   PersonAdd
 } from '@mui/icons-material';
@@ -35,8 +33,6 @@ function Sidebar({ open, onClose }: SidebarProps) {
     { text: 'Customize Avatar', path: '/customization', icon: <Palette /> },
     { text: 'Virtual Try-On', path: '/outfit-try-on', icon: <Checkroom /> },
     { text: 'My Orders', path: '/pricing', icon: <AttachMoney /> },
-    { text: 'About Us', path: '/about', icon: <Info /> },
-    { text: 'Contact', path: '/contact', icon: <ContactMail /> },
     { text: 'Help & Support', path: '/support', icon: <Support /> },
   ];
 

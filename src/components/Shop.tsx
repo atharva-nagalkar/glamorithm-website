@@ -269,6 +269,87 @@ function Shop() {
         ))}
       </Grid>
 
+      {/* Shop by Category */}
+      <Box sx={{ mt: 8, mb: 6 }}>
+        <Typography variant="h4" component="h3" sx={{ textAlign: 'center', mb: 6, color: '#333', fontWeight: 'bold' }}>
+          Shop by Category
+        </Typography>
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card sx={{ height: '100%', cursor: 'pointer', '&:hover': { transform: 'translateY(-4px)', transition: 'transform 0.3s' } }}>
+              <CardMedia
+                sx={{ height: 200, backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                <Typography variant="h2">👔</Typography>
+              </CardMedia>
+              <CardContent>
+                <Typography variant="h6" component="h4" gutterBottom>
+                  Formal Wear
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Professional attire for work and special occasions
+                </Typography>
+                <Chip label="500+ Items" size="small" sx={{ mt: 1 }} />
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card sx={{ height: '100%', cursor: 'pointer', '&:hover': { transform: 'translateY(-4px)', transition: 'transform 0.3s' } }}>
+              <CardMedia
+                sx={{ height: 200, backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                <Typography variant="h2">👕</Typography>
+              </CardMedia>
+              <CardContent>
+                <Typography variant="h6" component="h4" gutterBottom>
+                  Casual Wear
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Comfortable everyday clothing for all occasions
+                </Typography>
+                <Chip label="1200+ Items" size="small" sx={{ mt: 1 }} />
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card sx={{ height: '100%', cursor: 'pointer', '&:hover': { transform: 'translateY(-4px)', transition: 'transform 0.3s' } }}>
+              <CardMedia
+                sx={{ height: 200, backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                <Typography variant="h2">👗</Typography>
+              </CardMedia>
+              <CardContent>
+                <Typography variant="h6" component="h4" gutterBottom>
+                  Party Wear
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Stunning outfits for parties and celebrations
+                </Typography>
+                <Chip label="800+ Items" size="small" sx={{ mt: 1 }} />
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card sx={{ height: '100%', cursor: 'pointer', '&:hover': { transform: 'translateY(-4px)', transition: 'transform 0.3s' } }}>
+              <CardMedia
+                sx={{ height: 200, backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                <Typography variant="h2">👟</Typography>
+              </CardMedia>
+              <CardContent>
+                <Typography variant="h6" component="h4" gutterBottom>
+                  Accessories
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Shoes, bags, jewelry and more to complete your look
+                </Typography>
+                <Chip label="600+ Items" size="small" sx={{ mt: 1 }} />
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
+
       {/* Load More */}
       <Box sx={{ textAlign: 'center', mt: 6 }}>
         <Button variant="outlined" size="large" sx={{ px: 4 }}>

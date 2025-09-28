@@ -95,6 +95,56 @@ function About() {
         </Box>
       </Box>
 
+      {/* How It Works Section */}
+      <Box sx={{ mb: 8 }}>
+        <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', mb: 6 }}>
+          How Glamorithm Works
+        </Typography>
+        <Box sx={{ 
+          display: 'grid', 
+          gridTemplateColumns: { xs: '1fr', md: 'repeat(4, 1fr)' },
+          gap: 4,
+          mt: 4
+        }}>
+          <Box sx={{ textAlign: 'center', p: 3 }}>
+            <Typography variant="h1" sx={{ color: '#333', mb: 2 }}>📸</Typography>
+            <Typography variant="h6" gutterBottom sx={{ color: '#333', fontWeight: 'bold' }}>
+              Upload Photo
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#666' }}>
+              Upload your full-body photo for AI analysis
+            </Typography>
+          </Box>
+          <Box sx={{ textAlign: 'center', p: 3 }}>
+            <Typography variant="h1" sx={{ color: '#333', mb: 2 }}>🤖</Typography>
+            <Typography variant="h6" gutterBottom sx={{ color: '#333', fontWeight: 'bold' }}>
+              AI Avatar Creation
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#666' }}>
+              Generate your personalized avatar with accurate body structure
+            </Typography>
+          </Box>
+          <Box sx={{ textAlign: 'center', p: 3 }}>
+            <Typography variant="h1" sx={{ color: '#333', mb: 2 }}>👗</Typography>
+            <Typography variant="h6" gutterBottom sx={{ color: '#333', fontWeight: 'bold' }}>
+              Virtual Try-On
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#666' }}>
+              Try thousands of outfits on your avatar instantly
+            </Typography>
+          </Box>
+          <Box sx={{ textAlign: 'center', p: 3 }}>
+            <Typography variant="h1" sx={{ color: '#333', mb: 2 }}>🛒</Typography>
+            <Typography variant="h6" gutterBottom sx={{ color: '#333', fontWeight: 'bold' }}>
+              Shop & Order
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#666' }}>
+              Order clothes that you know will look perfect on you
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
       {/* Mission Section */}
       <Box sx={{ mb: 8, textAlign: 'center' }}>
         <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', mb: 4 }}>
@@ -111,6 +161,22 @@ function About() {
           AI-generated avatars that accurately represent your body type, allowing you to 
           confidently purchase clothes that look and fit exactly as expected.
         </Typography>
+      </Box>
+
+      {/* Privacy Section */}
+      <Box sx={{ mb: 8, textAlign: 'center', py: 6, backgroundColor: '#f8f9fa', borderRadius: 3 }}>
+        <Typography variant="h4" component="h3" sx={{ mb: 4, color: '#333', fontWeight: 'bold' }}>
+          Your Privacy is Our Priority
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 4, color: '#666', fontSize: '1.1rem', maxWidth: 600, mx: 'auto' }}>
+          All your photos and avatar data are processed securely and stored privately. 
+          We never share your personal information or body measurements with third parties.
+        </Typography>
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}>
+          <Chip icon={<Typography>🔒</Typography>} label="End-to-End Encryption" variant="outlined" />
+          <Chip icon={<Typography>🛡️</Typography>} label="Private Data Storage" variant="outlined" />
+          <Chip icon={<Typography>🚫</Typography>} label="No Data Sharing" variant="outlined" />
+        </Box>
       </Box>
 
       {/* Features Grid */}
