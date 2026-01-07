@@ -2,13 +2,7 @@ body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
   background: 
-    linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%), /* Keep the gradient */
-    url('/logo.png') center/contain no-repeat; /* Add logo as background */
-  background-blend-mode: overlay; /* Blend with the gradient */
-  background-attachment: fixed;
-  background-size: 70%; /* Adjust size of the logo */
-  background-position: center;
-  background-color: rgba(255, 255, 255, 0.7); /* Slight white overlay to fade the logo */
+    linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Keep the gradient */
   color: #333;
   line-height: 1.6;
   min-height: 100vh;
@@ -17,13 +11,13 @@ body {
 
 body::before {
   content: '';
-  position: absolute;
+  position: fixed; /* Fixed position to cover whole viewport */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/logo.png') center/contain no-repeat;
-  opacity: 0.05; /* Adjust this value to control the fade (0.05 = 5% opacity) */
+  background: url('/logo.jpg') center/cover no-repeat; /* Use cover to fit whole webpage */
+  opacity: 0.10; /* Increased from 0.05 to 0.10 (5% increase) */
   z-index: -1;
   pointer-events: none; /* Ensure it doesn't interfere with clicks */
 }
@@ -80,15 +74,43 @@ html {
   background-color: #fff; /* White background for the main content */
   padding: 60px 40px; /* More generous padding */
   margin: 40px auto; /* Center with top/bottom margins */
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  min-height: 70vh; /* Larger minimum height */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Remove white background for home and shop pages */
+.content-container.home-page,
+.content-container.shop-page {
+  background-color: transparent; /* Transparent background */
+  box-shadow: none; /* Remove shadow */
+  padding: 20px 40px; /* Reduced padding */
+  margin: 0; /* Remove margins */
+  text-align: center; /* Center align all text content */
+}
+
+/* Center align all direct children in home and shop pages */
+.content-container.home-page > div > *,
+.content-container.shop-page > div > * {
+  text-align: center;
+}
+
+/* For grid layouts, keep them centered but allow internal grid structure */
+.content-container.home-page .MuiGrid-container,
+.content-container.shop-page .MuiGrid-container {
+  justify-content: center;
 }
 
 .content-container:hover {
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
+}
+
+/* Prevent hover effect on transparent containers */
+.content-container.home-page:hover,
+.content-container.shop-page:hover {
+  box-shadow: none;
+  transform: none;
 }
 
 /* Style for typography */
