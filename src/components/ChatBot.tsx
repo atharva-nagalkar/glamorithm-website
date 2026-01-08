@@ -10,11 +10,8 @@ import {
   Drawer,
   List,
   ListItem,
-  ListItemText,
   ListItemAvatar,
-  Chip,
   Badge,
-  Collapse,
   useTheme,
   useMediaQuery
 } from '@mui/material';
@@ -23,9 +20,7 @@ import {
   Close,
   Send,
   SmartToy,
-  Person,
-  ExpandMore,
-  ExpandLess
+  Person
 } from '@mui/icons-material';
 
 interface Message {
@@ -369,7 +364,7 @@ const ChatBot = () => {
       )}
 
       {/* Add typing animation styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes pulse {
           0%, 80%, 100% {
             transform: scale(0);
