@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Container, AppBar, Toolbar, Typography, Button, Box, IconButton, Badge } from '@mui/material';
 import { Menu as MenuIcon, AccountCircle, ShoppingCart } from '@mui/icons-material';
 import Home from './components/Home';
@@ -16,24 +16,7 @@ import Support from './components/Support';
 import OutfitTryOn from './components/OutfitTryOn';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
-
-// Wrapper component to handle location-based class
-function ContentContainer({ children }: { children: React.ReactNode }) {
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
-  const isShopPage = location.pathname === '/shop';
-  
-  return (
-    <Container 
-      className={`content-container ${isHomePage ? 'home-page' : ''} ${isShopPage ? 'shop-page' : ''}`} 
-      sx={{ flex: 1, py: 4 }}
-    >
-      <Box sx={{ mt: 2, mb: 6 }}>
-        {children}
-      </Box>
-    </Container>
-  );
-}
+import ChatBot from './components/ChatBot';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -106,25 +89,28 @@ function App() {
           </Toolbar>
         </AppBar>
         
-        <ContentContainer>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/avatar-creation" element={<AvatarCreation />} />
-            <Route path="/avatar-gallery" element={<AvatarGallery />} />
-            <Route path="/customization" element={<Customization />} />
-            <Route path="/outfit-try-on" element={<OutfitTryOn />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/support" element={<Support />} />
-          </Routes>
-        </ContentContainer>
+        <Container className="content-container" sx={{ flex: 1, py: 4 }}>
+          <Box sx={{ mt: 2, mb: 6 }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/avatar-creation" element={<AvatarCreation />} />
+              <Route path="/avatar-gallery" element={<AvatarGallery />} />
+              <Route path="/customization" element={<Customization />} />
+              <Route path="/outfit-try-on" element={<OutfitTryOn />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/support" element={<Support />} />
+            </Routes>
+          </Box>
+        </Container>
         
         <Footer />
         <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        <ChatBot />
       </Box>
     </Router>
   );

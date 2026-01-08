@@ -1,5 +1,5 @@
-import { Box, Typography, Container, IconButton, Link } from '@mui/material';
-import { GitHub, Twitter, Instagram, Email, Favorite } from '@mui/icons-material';
+import { Box, Typography, IconButton, Link } from '@mui/material';
+import { Instagram, Twitter, GitHub, Email, Favorite } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 
 function Footer() {
@@ -25,7 +25,7 @@ function Footer() {
         }
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+      <Box sx={{ position: 'relative', zIndex: 1, px: { xs: 2, sm: 3, md: 4 } }}>
         <Box sx={{ 
           display: 'flex', 
           flexDirection: { xs: 'column', md: 'row' },
@@ -142,7 +142,7 @@ function Footer() {
           mt: 0.25
         }}>
           <Typography variant="body2" sx={{ opacity: 0.7, fontSize: '0.7rem' }}>
-            © 2024 Glamorithm
+            © 2026 Glamorithm
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
             <Typography variant="body2" sx={{ opacity: 0.7, fontSize: '0.7rem' }}>
@@ -154,7 +154,7 @@ function Footer() {
             </Typography>
           </Box>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 }

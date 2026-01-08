@@ -1,25 +1,9 @@
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  background: 
-    linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Keep the gradient */
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Beautiful gradient background */
   color: #333;
   line-height: 1.6;
-  min-height: 100vh;
-  position: relative;
-}
-
-body::before {
-  content: '';
-  position: fixed; /* Fixed position to cover whole viewport */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('/logo.jpg') center/cover no-repeat; /* Use cover to fit whole webpage */
-  opacity: 0.10; /* Increased from 0.05 to 0.10 (5% increase) */
-  z-index: -1;
-  pointer-events: none; /* Ensure it doesn't interfere with clicks */
 }
 
 /* Add smooth scrolling */
@@ -58,6 +42,18 @@ html {
   animation: slideInLeft 0.6s ease-out;
 }
 
+/* Chatbot typing animation */
+@keyframes pulse {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* Style for AppBar */
 .MuiAppBar-root {
   background-color: #333 !important; /* Dark app bar */
@@ -74,31 +70,10 @@ html {
   background-color: #fff; /* White background for the main content */
   padding: 60px 40px; /* More generous padding */
   margin: 40px auto; /* Center with top/bottom margins */
-  border-radius: 16px; /* Rounded corners */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  min-height: 70vh; /* Larger minimum height */
   transition: all 0.3s ease; /* Smooth transitions */
-}
-
-/* Remove white background for home and shop pages */
-.content-container.home-page,
-.content-container.shop-page {
-  background-color: transparent; /* Transparent background */
-  box-shadow: none; /* Remove shadow */
-  padding: 20px 40px; /* Reduced padding */
-  margin: 0; /* Remove margins */
-  text-align: center; /* Center align all text content */
-}
-
-/* Center align all direct children in home and shop pages */
-.content-container.home-page > div > *,
-.content-container.shop-page > div > * {
-  text-align: center;
-}
-
-/* For grid layouts, keep them centered but allow internal grid structure */
-.content-container.home-page .MuiGrid-container,
-.content-container.shop-page .MuiGrid-container {
-  justify-content: center;
 }
 
 .content-container:hover {
@@ -106,12 +81,6 @@ html {
   transform: translateY(-2px);
 }
 
-/* Prevent hover effect on transparent containers */
-.content-container.home-page:hover,
-.content-container.shop-page:hover {
-  box-shadow: none;
-  transform: none;
-}
 
 /* Style for typography */
 .MuiTypography-root {
